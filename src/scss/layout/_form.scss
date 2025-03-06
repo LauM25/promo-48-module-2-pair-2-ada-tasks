@@ -1,0 +1,39 @@
+.main{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    align-items: flex-start;
+    
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    height: 10vh;
+    padding: 10px;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    height: 10vh;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
+.formAdd{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
