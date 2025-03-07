@@ -37,3 +37,21 @@
     flex-direction: column;
     gap:10px;
 }
+
+.taskList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list {
+    display: flex;
+    gap: 5px;
+    border: 1px solid grey;
+    padding: 5px;
+}
+
+.completed {
+    text-decoration: line-through;
+  }
+
