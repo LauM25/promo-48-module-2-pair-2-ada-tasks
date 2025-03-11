@@ -1,45 +1,13 @@
 'use strict';
 
-console.log('>> Ready :)');
 
-// Hacer enunciado
 
-const taskList = document.querySelector(".js_taskList");
-
-/*const tasks = [
-    { name: "Recoger setas en el campo", completed: true, id: 1 },
-    { name: "Comprar pilas", completed: true, id: 2 },
-    { name: "Poner una lavadora de blancos", completed: true, id: 3 },
-    {
-        name: "Aprender cómo se realizan las peticiones al servidor en JavaScript",
-        completed: false,
-        id: 4,
-    },
-];*/
-
-/*Pasos:
-cuando la tarea sea completa, la frase sale tachada.
-*/
-
-// const completed = document.querySelector("completed");
-
-// La condición if no está funcionando.
-
-/*for (const task of tasks) {
-    console.log(task.name);
-    if (task.completed === false) {
-        remove.classList(completed);
-    } else {
-        add.classList(completed);
-    }
-    taskList.innerHTML += `<li class="list">
-                    <input type="checkbox">
-                    <p>${task.name}</p>
-                </li>`;
-
-};*/
+/* */
 const GITHUB_USER = "LauM25";
 const SERVER_URL = `https://dev.adalab.es/api/todo/${GITHUB_USER}`;
+const listCheckbox = document.querySelector(".js-list-checkbox");
+const tasksLocalStorage = JSON.parse(localStorage.getItem("tasks"));
+const taskList = document.querySelector(".js-list");
 
 fetch("https://dev.adalab.es/api/todo")
     .then(response => response.json())
@@ -47,19 +15,37 @@ fetch("https://dev.adalab.es/api/todo")
         console.log(data)
         const tasks = data.results;
         for (const task of tasks) {
-
-            taskList.innerHTML += `<li class="list">
+            /*  if (task.completed === true) {
+                  taskList.innerHTML += `<li class="list completed js-list-checkbox">
+                      <input type="checkbox">
+                      <p>${task.name}</p>
+                  </li>`;
+  
+              } else if (task.completed === false) {
+                  taskList.innerHTML += `<li class="list js-list-checkbox">
+                      <input type="checkbox">
+                      <p>${task.name}</p>
+                  </li>`;
+                  */
+            if (tasksLocalStorage !== null) {
+                taskList.innerHTML = `<li class="list completed js-list-checkbox">
                     <input type="checkbox">
                     <p>${task.name}</p>
                 </li>`;
+
+            } else {
+                fetch(SERVER_URL)
+                    .then((response) => response.json())
+                    .then((data) => {
+
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+
+            }
         }
-    })
+    });
 
 
 
-function handleClick(ev) {
-    ev.preventDefault();
-    task.classList.toggle("completed")
-    task.classList.toggle("incompleted")
-}
-button.addEventListener("click", handleClick);
