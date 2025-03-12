@@ -33,7 +33,7 @@ fetch("https://dev.adalab.es/api/todo")
                     <p>${task.name}</p>
                 </li>`;
             }
-        })
+        });
 
 
 
