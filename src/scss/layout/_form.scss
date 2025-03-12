@@ -1,18 +1,20 @@
-.main{
+.main {
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.section{
+
+.section {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     align-items: flex-start;
-    
+
 }
-.header{
+
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +22,8 @@
     height: 10vh;
     padding: 10px;
 }
-.footer{
+
+.footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,12 +33,13 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    
+
 }
-.formAdd{
+
+.formAdd {
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
 }
 
 .taskList {
@@ -53,5 +57,4 @@
 
 .completed {
     text-decoration: line-through;
-  }
-
+}
