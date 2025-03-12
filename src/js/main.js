@@ -47,7 +47,6 @@ fetch("https://dev.adalab.es/api/todo")
         console.log(data)
         const tasks = data.results;
         for (const task of tasks) {
-
             taskList.innerHTML += `<li class="list">
                     <input type="checkbox">
                     <p>${task.name}</p>
